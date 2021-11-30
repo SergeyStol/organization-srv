@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sleep 2
+
+newman run /etc/postman/Organizations-srv.collection.json -k --disable-unicode

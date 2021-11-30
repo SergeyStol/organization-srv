@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  mongodblocaltest:
+    build:
+      context: ./mongoDb
+      dockerfile: create_table.Dockerfile
+    ports:
+      - "27017:27017"
+    networks:
+      - default
+  organizationsservicetest:
+    build:
+      dockerfile: local.Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongodblocaltest
+    depends_on:
+      - mongodblocaltest
+    networks:
+      - default
+  newman:
+    build:
+      context: ./postman
+      network: host
+    environment:
+      HTTP_PROXY: organizationsservicetest:8080
+    depends_on:
+      - organizationsservicetest
+    networks:
+      - default
