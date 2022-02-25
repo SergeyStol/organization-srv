@@ -14,7 +14,7 @@
     <name>organizations-srv</name>
     <description>organization-srv</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
