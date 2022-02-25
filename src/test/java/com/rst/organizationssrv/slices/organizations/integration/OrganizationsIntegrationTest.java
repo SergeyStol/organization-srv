@@ -48,8 +48,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @EnableMongoRepositories(basePackageClasses = OrganizationsRepository.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @EnableWebMvc // https://stackoverflow.com/questions/14124110/spring-mvc-testframework-fails-with-http-response-406
-    @PropertySource()
-@Profile()
+//    @PropertySource()
+//@Profile()
 //@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 class OrganizationsIntegrationTest extends DockerMongoStarter {
 
